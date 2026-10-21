@@ -31,9 +31,13 @@ with check (author_id=(select auth.uid()) and exists(
  select 1 from public.diary_profiles p where p.id=(select auth.uid()) and p.active
 ));
 create policy "Autor ve proprios relatos ou gestor ve todos" on public.diary_entries for select to authenticated
-using (author_id=(select auth.uid()) or exists(
- select 1 from public.diary_profiles p where p.id=(select auth.uid()) and p.active and p.role in ('admin','gestor')
-));
+using (
+ (select auth.jwt()->'app_metadata'->>'diary_role') in ('admin','gestor')
+ or (
+ author_id=(select auth.uid())
+ and exists(select 1 from public.diary_profiles p where p.id=(select auth.uid()) and p.active)
+ )
+);
 -- Sem UPDATE/DELETE por usuários: histórico original é imutável.
 grant select on public.diary_profiles to authenticated;
 grant select,insert on public.diary_entries to authenticated;
