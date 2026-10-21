@@ -1,0 +1,18 @@
+{
+  "name": "ÁUREON Diário de Bordo",
+  "short_name": "Diário de Bordo",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a1020",
+  "theme_color": "#10192e",
+  "description": "Registro diário das ocorrências operacionais",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
