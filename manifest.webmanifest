@@ -1,12 +1,12 @@
 {
-  "name": "ÁUREON Diário de Bordo",
-  "short_name": "Diário de Bordo",
+  "name": "LOGBOOK — Inteligência Operacional",
+  "short_name": "LOGBOOK",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0a1020",
-  "theme_color": "#10192e",
-  "description": "Registro diário das ocorrências operacionais",
+  "background_color": "#071716",
+  "theme_color": "#071716",
+  "description": "Central inteligente de registros, agendamentos e lembretes da operação",
   "icons": [
     {
       "src": "./icon.svg",
